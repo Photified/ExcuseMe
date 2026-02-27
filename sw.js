@@ -1,4 +1,4 @@
-const CACHE_NAME = 'excuse-me-v5';
+const CACHE_NAME = 'excuse-me-v8';
 const ASSETS = [
   '/ExcuseMe/',
   '/ExcuseMe/index.html',

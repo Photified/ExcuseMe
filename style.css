@@ -56,12 +56,11 @@ body {
     max-width: 450px; 
 }
 
-/* --- NEW CATEGORY BUTTON GRID --- */
+/* --- NEW CSS GRID LAYOUT --- */
 #category-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Forces exactly 2 even columns */
+    gap: 10px; /* Perfect, even spacing between all buttons */
     margin-bottom: 25px;
     width: 100%;
 }
@@ -70,27 +69,40 @@ body {
     background-color: var(--pill-bg);
     color: var(--pill-text);
     border: 2px solid transparent;
-    border-radius: 20px;
-    padding: 8px 16px;
+    border-radius: 12px; /* Sleeker, native app look */
+    padding: 12px 5px;
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
     font-family: inherit;
-    /* Prevents blue tap highlight on mobile */
     -webkit-tap-highlight-color: transparent; 
+    
+    /* Center text inside the exact grid box */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.2;
+    width: 100%;
+}
+
+/* Forces the Surprise Me button to span across both columns at the top */
+.category-btn[data-category="any"] {
+    grid-column: span 2;
+    padding: 15px 10px;
+    font-size: 1rem;
 }
 
 .category-btn:hover {
     filter: brightness(0.9);
 }
 
-/* The active selected state uses your exact red */
 .category-btn.active {
     background-color: var(--btn-bg);
     color: var(--btn-text);
     box-shadow: 0 4px 10px rgba(244, 12, 12, 0.3);
-    transform: scale(1.05);
+    transform: scale(1.02); /* Slightly smaller scale pop so it doesn't break grid */
 }
 
 /* --- MAIN BUTTON --- */
