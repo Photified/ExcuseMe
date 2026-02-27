@@ -1,17 +1,15 @@
-const CACHE_NAME = 'excuse-me-v4';
+const CACHE_NAME = 'excuse-me-v5';
 const ASSETS = [
-  './',
-  './index.html',
-  './style.css',
-  './app.js',
-  './manifest.json',
-  './assets/logotop.png'
+  '/ExcuseMe/',
+  '/ExcuseMe/index.html',
+  '/ExcuseMe/style.css',
+  '/ExcuseMe/app.js',
+  '/ExcuseMe/manifest.json',
+  '/ExcuseMe/assets/logotop.png'
 ];
-// Note: I purposefully removed the 192/512 icons from this array. 
-// If they have a typo, they won't crash your entire app installation anymore.
 
 self.addEventListener('install', (e) => {
-  self.skipWaiting(); // Forces the browser to instantly load the new code
+  self.skipWaiting(); 
   e.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log('Caching essential app files');
@@ -33,7 +31,7 @@ self.addEventListener('activate', (e) => {
       );
     })
   );
-  self.clients.claim(); // Instantly takes over the current open page
+  self.clients.claim(); 
 });
 
 self.addEventListener('fetch', (e) => {
