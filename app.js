@@ -200,34 +200,27 @@ document.getElementById('excuse-btn').addEventListener('click', () => {
     const category = document.getElementById('category-select').value;
     let availableExcuses = [];
 
-    // Pull all excuses if "any", otherwise pull the specific category
     if (category === 'any') {
         Object.values(categorizedExcuses).forEach(arr => availableExcuses.push(...arr));
     } else {
         availableExcuses = categorizedExcuses[category] || [];
     }
 
-    // Filter out excuses currently in the cooldown queue
     let validExcuses = availableExcuses.filter(excuse => !cooldownQueue.includes(excuse));
 
-    // Safety Net: Prevent infinite loop if category has fewer items than the cooldown queue
     if (validExcuses.length === 0) {
         validExcuses = availableExcuses; 
     }
 
-    // Pick a random excuse
     const randomIndex = Math.floor(Math.random() * validExcuses.length);
     const selectedExcuse = validExcuses[randomIndex];
 
-    // Add to the cooldown queue (storing the string itself)
     cooldownQueue.push(selectedExcuse);
     
-    // Ensure the queue doesn't exceed our 50-turn limit
     if (cooldownQueue.length > COOLDOWN_LIMIT) {
-        cooldownQueue.shift(); // Remove the oldest excuse
+        cooldownQueue.shift(); 
     }
 
-    // Display the excuse
     document.getElementById('excuse-display').innerText = selectedExcuse;
 });
 
@@ -240,7 +233,6 @@ const darkModeToggle = document.getElementById('dark-mode-toggle');
 settingsBtn.addEventListener('click', () => settingsModal.classList.remove('hidden'));
 closeSettings.addEventListener('click', () => settingsModal.classList.add('hidden'));
 
-// Dark Mode Preference
 if (localStorage.getItem('theme') === 'dark') {
     document.body.setAttribute('data-theme', 'dark');
     darkModeToggle.checked = true;
@@ -263,7 +255,8 @@ const installBtn = document.getElementById('install-btn');
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    installBtn.classList.remove('hidden'); // Show install button
+    installBtn.classList.remove('hidden'); 
+    console.log("Install prompt successfully fired and caught!"); 
 });
 
 installBtn.addEventListener('click', async () => {
