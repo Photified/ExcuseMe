@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excuse Me</title>
-    <link rel="stylesheet" href="style.css?v=6">
-    <link rel="manifest" href="manifest.json?v=6">
+    <link rel="stylesheet" href="style.css?v=7">
+    <link rel="manifest" href="manifest.json?v=7">
     <meta name="theme-color" content="#121212">
     <link rel="apple-touch-icon" href="/ExcuseMe/assets/logo-192.png">
 </head>
@@ -13,20 +13,20 @@
     <button id="settings-btn" aria-label="Settings">⚙️ Settings</button>
 
     <div id="main-container">
-        <img src="/ExcuseMe/assets/logotop.png" alt="Excuse Me App Logo" id="top-logo" width="160" style="max-width: 160px; width: 100%; height: auto; margin-bottom: 30px; object-fit: contain;">
+        <img src="/ExcuseMe/assets/logotop.png" alt="Excuse Me App Logo" id="top-logo" width="160" style="max-width: 160px; width: 100%; height: auto; margin-bottom: 25px; object-fit: contain;">
         
-        <select id="category-select" aria-label="Excuse Category">
-            <option value="any">Surprise Me (Any)</option>
-            <option value="work">Work & Obligations</option>
-            <option value="illness">Mild Illness</option>
-            <option value="exhaustion">Exhaustion & Mental Health</option>
-            <option value="home">Home, Car & Life Admin</option>
-            <option value="pets">Pets & Family</option>
-            <option value="flakes">Relatable Flakes</option>
-            <option value="vague">Vague but Firm</option>
-            <option value="transit">Transit & Delays</option>
-        </select>
-        <br><br>
+        <div id="category-container">
+            <button class="category-btn active" data-category="any">Surprise Me</button>
+            <button class="category-btn" data-category="work">Work</button>
+            <button class="category-btn" data-category="illness">Illness</button>
+            <button class="category-btn" data-category="exhaustion">Exhausted</button>
+            <button class="category-btn" data-category="home">Home / Admin</button>
+            <button class="category-btn" data-category="pets">Pets / Family</button>
+            <button class="category-btn" data-category="flakes">My Fault</button>
+            <button class="category-btn" data-category="vague">Vague</button>
+            <button class="category-btn" data-category="transit">Transit</button>
+        </div>
+        
         <button id="excuse-btn">Excuse Me</button>
         <p id="excuse-display">Tap the button for a way out.</p>
     </div>
@@ -45,6 +45,6 @@
         </div>
     </div>
 
-    <script src="app.js?v=6"></script>
+    <script src="app.js?v=7"></script>
 </body>
 </html>

@@ -192,18 +192,32 @@ const categorizedExcuses = {
     ]
 };
 
+// --- NEW BUTTON LOGIC ---
+let currentCategory = 'any';
+const categoryBtns = document.querySelectorAll('.category-btn');
+
+categoryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove the active styling from all buttons
+        categoryBtns.forEach(b => b.classList.remove('active'));
+        // Add active styling to the clicked button
+        btn.classList.add('active');
+        // Update the current category state
+        currentCategory = btn.getAttribute('data-category');
+    });
+});
+
 // Cooldown Logic
 let cooldownQueue = [];
 const COOLDOWN_LIMIT = 10;
 
 document.getElementById('excuse-btn').addEventListener('click', () => {
-    const category = document.getElementById('category-select').value;
     let availableExcuses = [];
 
-    if (category === 'any') {
+    if (currentCategory === 'any') {
         Object.values(categorizedExcuses).forEach(arr => availableExcuses.push(...arr));
     } else {
-        availableExcuses = categorizedExcuses[category] || [];
+        availableExcuses = categorizedExcuses[currentCategory] || [];
     }
 
     let validExcuses = availableExcuses.filter(excuse => !cooldownQueue.includes(excuse));

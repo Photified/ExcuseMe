@@ -1,10 +1,11 @@
 :root {
     --bg-color: #f4f4f9;
     --text-color: #333333;
-    --btn-bg: #f40c0c; /* Exact red requested */
+    --btn-bg: #f40c0c; 
     --btn-text: #ffffff;
     --modal-bg: #ffffff;
-    --select-border: #cccccc;
+    --pill-bg: #e0e0e0;
+    --pill-text: #555555;
 }
 
 [data-theme="dark"] {
@@ -13,7 +14,8 @@
     --btn-bg: #f40c0c;
     --btn-text: #ffffff;
     --modal-bg: #1e1e1e;
-    --select-border: #444444;
+    --pill-bg: #2a2a2a;
+    --pill-text: #bbbbbb;
 }
 
 * {
@@ -44,38 +46,54 @@ body {
     cursor: pointer;
 }
 
-/* Scalable Flex Container */
 #main-container {
     display: flex;
     flex-direction: column;
     align-items: center; 
     text-align: center;
     padding: 20px;
-    width: 90%; 
+    width: 95%; 
     max-width: 450px; 
 }
 
-#category-select {
-    padding: 12px 20px;
-    font-size: 1.1rem;
-    border-radius: 10px;
-    border: 2px solid var(--select-border);
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    cursor: pointer;
-    outline: none;
-    font-family: inherit;
-    appearance: none; 
-    -webkit-appearance: none;
-    text-align: center;
+/* --- NEW CATEGORY BUTTON GRID --- */
+#category-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 25px;
     width: 100%;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-#category-select:focus {
-    border-color: var(--btn-bg);
+.category-btn {
+    background-color: var(--pill-bg);
+    color: var(--pill-text);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    /* Prevents blue tap highlight on mobile */
+    -webkit-tap-highlight-color: transparent; 
 }
 
+.category-btn:hover {
+    filter: brightness(0.9);
+}
+
+/* The active selected state uses your exact red */
+.category-btn.active {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    box-shadow: 0 4px 10px rgba(244, 12, 12, 0.3);
+    transform: scale(1.05);
+}
+
+/* --- MAIN BUTTON --- */
 #excuse-btn {
     background-color: var(--btn-bg);
     color: var(--btn-text);
@@ -96,7 +114,7 @@ body {
 
 #excuse-display {
     margin-top: 30px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     min-height: 80px;
     padding: 0 10px;
     line-height: 1.4;
