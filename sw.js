@@ -1,4 +1,4 @@
-const CACHE_NAME = 'excuse-me-v2';
+const CACHE_NAME = 'excuse-me-v3';
 const ASSETS = [
   './',
   './index.html',
@@ -6,7 +6,8 @@ const ASSETS = [
   './app.js',
   './manifest.json',
   './assets/icon-192.png',
-  './assets/icon-512.png'
+  './assets/icon-512.png',
+  './assets/logotop.png' // New logo added to cache
 ];
 
 // Install Service Worker and Cache Files
@@ -23,13 +24,12 @@ self.addEventListener('install', (e) => {
 self.addEventListener('fetch', (e) => {
   e.respondWith(
     caches.match(e.request).then((response) => {
-      // Return the cached version if found, otherwise fetch from the internet
       return response || fetch(e.request);
     })
   );
 });
 
-// Clear Old Caches on Activate (Useful for when you update your code later)
+// Clear Old Caches on Activate
 self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches.keys().then((cacheNames) => {
