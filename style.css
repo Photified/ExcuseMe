@@ -1,7 +1,7 @@
 :root {
     --bg-color: #f4f4f9;
     --text-color: #333333;
-    --btn-bg: #f40c0c; /* Updated to your exact red */
+    --btn-bg: #f40c0c; /* Exact red requested */
     --btn-text: #ffffff;
     --modal-bg: #ffffff;
     --select-border: #cccccc;
@@ -10,14 +10,14 @@
 [data-theme="dark"] {
     --bg-color: #121212;
     --text-color: #f4f4f9;
-    --btn-bg: #f40c0c; /* Keeps the red punchy in dark mode */
+    --btn-bg: #f40c0c;
     --btn-text: #ffffff;
     --modal-bg: #1e1e1e;
     --select-border: #444444;
 }
 
 * {
-    box-sizing: border-box; /* Ensures padding doesn't break scaling */
+    box-sizing: border-box; 
 }
 
 body {
@@ -29,7 +29,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Changed to min-height for better mobile scrolling */
+    min-height: 100vh; 
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -48,21 +48,11 @@ body {
 #main-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Forces everything inside to center perfectly */
+    align-items: center; 
     text-align: center;
     padding: 20px;
-    width: 90%; /* Scales dynamically on all devices */
-    max-width: 450px; /* Caps the width on desktop */
-}
-
-/* Fixed, Scaled-Down Logo */
-#top-logo {
-    display: block;        
-    width: 100%;             
-    max-width: 160px; /* Significantly scaled down from the massive size */
-    height: auto;           
-    margin: 0 auto 30px auto; 
-    object-fit: contain;
+    width: 90%; 
+    max-width: 450px; 
 }
 
 #category-select {
