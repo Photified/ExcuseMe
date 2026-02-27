@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excuse Me</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" href="assets/icon-192.png">
+</head>
+<body>
+    <button id="settings-btn" aria-label="Settings">⚙️ Settings</button>
+
+    <div id="main-container">
+        <select id="category-select" aria-label="Excuse Category">
+            <option value="any">Surprise Me (Any)</option>
+            <option value="work">Work & Obligations</option>
+            <option value="illness">Mild Illness</option>
+            <option value="exhaustion">Exhaustion & Mental Health</option>
+            <option value="home">Home, Car & Life Admin</option>
+            <option value="pets">Pets & Family</option>
+            <option value="flakes">Relatable Flakes</option>
+            <option value="vague">Vague but Firm</option>
+            <option value="transit">Transit & Delays</option>
+        </select>
+        <br><br>
+        <button id="excuse-btn">Excuse Me</button>
+        <p id="excuse-display">Tap the button for a way out.</p>
+    </div>
+
+    <div id="settings-modal" class="hidden">
+        <div class="modal-content">
+            <h2>Settings</h2>
+            <div class="setting-item">
+                <label for="dark-mode-toggle">Dark Mode</label>
+                <input type="checkbox" id="dark-mode-toggle">
+            </div>
+            <div class="setting-item">
+                <button id="install-btn" class="hidden">Install App</button>
+            </div>
+            <button id="close-settings">Close</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

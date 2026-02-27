@@ -1,0 +1,141 @@
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333333;
+    --btn-bg: #ff5e5e;
+    --btn-text: #ffffff;
+    --modal-bg: #ffffff;
+    --select-border: #cccccc;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #f4f4f9;
+    --btn-bg: #e04a4a;
+    --btn-text: #ffffff;
+    --modal-bg: #1e1e1e;
+    --select-border: #444444;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#settings-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#main-container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+#category-select {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 2px solid var(--select-border);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
+    /* Removes default browser styling for a cleaner look */
+    appearance: none; 
+    -webkit-appearance: none;
+    text-align: center;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+#category-select:focus {
+    border-color: var(--btn-bg);
+}
+
+#excuse-btn {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    border-radius: 50px;
+    padding: 20px 40px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.1s;
+    width: 100%;
+}
+
+#excuse-btn:active {
+    transform: scale(0.95);
+}
+
+#excuse-display {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    min-height: 80px;
+    padding: 0 10px;
+    line-height: 1.4;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#settings-modal {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-content {
+    background-color: var(--modal-bg);
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.setting-item {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+#install-btn, #close-settings {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 100%;
+    margin-top: 15px;
+    font-weight: bold;
+}
