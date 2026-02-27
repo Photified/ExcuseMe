@@ -8,13 +8,13 @@
   "theme_color": "#f40c0c",
   "icons": [
     {
-      "src": "/ExcuseMe/assets/icon-192.png",
+      "src": "/ExcuseMe/assets/logo-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/ExcuseMe/assets/icon-512.png",
+      "src": "/ExcuseMe/assets/logo-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
