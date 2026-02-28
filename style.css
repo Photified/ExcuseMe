@@ -176,3 +176,41 @@ body {
     margin-top: 15px;
     font-weight: bold;
 }
+
+/* --- NEW COPY BUTTON & CONTAINER STYLES --- */
+#excuse-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    min-height: 80px;
+    width: 100%;
+}
+
+/* Override the old top margin since the container handles it now */
+#excuse-display {
+    margin-top: 0; 
+    font-size: 1.3rem;
+    line-height: 1.4;
+    flex: 1; /* Allows text to take up available space */
+}
+
+#copy-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.2s, transform 0.1s;
+    color: var(--text-color);
+}
+
+#copy-btn:hover {
+    background-color: var(--pill-bg);
+}
+
+#copy-btn:active {
+    transform: scale(0.9);
+}

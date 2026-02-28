@@ -12,7 +12,7 @@
 <body>
     <button id="settings-btn" aria-label="Settings">⚙️ Settings</button>
 
-    <div id="main-container">
+   <div id="main-container">
         <img src="/ExcuseMe/assets/logotop.png" alt="Excuse Me App Logo" id="top-logo" width="160" style="max-width: 160px; width: 100%; height: auto; margin-bottom: 25px; object-fit: contain;">
         
         <div id="category-container">
@@ -26,6 +26,14 @@
             <button class="category-btn" data-category="vague">Vague</button>
             <button class="category-btn" data-category="transit">Transit</button>
         </div>
+        
+        <button id="excuse-btn">Excuse Me</button>
+        
+        <div id="excuse-container">
+            <p id="excuse-display">Tap the button for a way out.</p>
+            <button id="copy-btn" class="hidden" aria-label="Copy to clipboard" title="Copy excuse">📋</button>
+        </div>
+    </div>
         
         <button id="excuse-btn">Excuse Me</button>
         <p id="excuse-display">Tap the button for a way out.</p>
